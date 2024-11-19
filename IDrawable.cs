@@ -8,10 +8,11 @@ namespace hw2
 {
     public interface IDrawable
     {
-        void DrawEllipse(float X1, float Y1, float X2, float Y2, string Text);
-        void DrawRectangle(float X1, float Y1, float X2, float Y2, string Text);
-        void DrawOval(float X1, float Y1, float X2, float Y2, string Text);
-        void DrawPolygon(float X1, float Y1, float X2, float Y2, string Text);
+        void DrawEllipse(float X, float Y, float Width, float Height, string Text);
+        void DrawRectangle(float X, float Y, float Width, float Height, string Text);
+        void DrawOval(float X, float Y, float Width, float Height, string Text);
+        void DrawPolygon(float X, float Y, float Width, float Height, string Text);
+        void DrawBoundingBox(float X, float Y, float Width, float Height);
     }
 }
 

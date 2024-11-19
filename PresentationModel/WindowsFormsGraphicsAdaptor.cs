@@ -17,75 +17,66 @@ namespace hw2.PresentationModel
         {
             _graphics = graphics;
         }
-        public void DrawEllipse(float X1, float Y1, float X2, float Y2, string Text)
+        public void DrawEllipse(float X, float Y, float Width, float Height, string Text)
         {
-            float width = Math.Abs((float)X2 - (float)X1);
-            float height = Math.Abs((float)Y2 - (float)Y1);
-            float minX = Math.Min(X1, X2);
-            float minY = Math.Min(Y1, Y2);
-            _graphics.DrawEllipse(Pens.Black, minX, minY, width, height);
-            _graphics.DrawString(Text, font, brush, new PointF((X1 + X2) / 2, (Y1 + Y2) / 2));
+            SizeF textSize = _graphics.MeasureString(Text, font);
+            float textX = ((X + X + Width) / 2) - (textSize.Width / 2);
+            float textY = ((Y + Y + Height) / 2) - (textSize.Height / 2);
+            _graphics.DrawEllipse(Pens.Black, X, Y, Width, Height);
+            _graphics.DrawString(Text, font, brush, new PointF(textX, textY));
         }
-        public void DrawRectangle(float X1, float Y1, float X2, float Y2, string Text)
+        public void DrawRectangle(float X, float Y, float Width, float Height, string Text)
         {
-            float width = Math.Abs((float)X2 - (float)X1);
-            float height = Math.Abs((float)Y2 - (float)Y1);
-            float minX = Math.Min(X1, X2);
-            float minY = Math.Min(Y1, Y2);
-            _graphics.DrawRectangle(Pens.Black, minX, minY, width, height);
-            _graphics.DrawString(Text, font, brush, new PointF((X1 + X2) / 2, (Y1 + Y2) / 2));
+            SizeF textSize = _graphics.MeasureString(Text, font);
+            float textX = ((X + X + Width) / 2) - (textSize.Width / 2);
+            float textY = ((Y + Y + Height) / 2) - (textSize.Height / 2);
+            _graphics.DrawRectangle(Pens.Black, X, Y, Width, Height);
+            _graphics.DrawString(Text, font, brush, new PointF(textX, textY));
         }
-        public void DrawOval(float X1, float Y1, float X2, float Y2, string Text)
+        public void DrawOval(float X, float Y, float Width, float Height, string Text)
         {
-            float left = Math.Min(X1, X2);
-            float right = Math.Max(X1, X2);
-            float top = Math.Min(Y1, Y2);
-            float bottom = Math.Max(Y1, Y2);
-
-            float width = right - left;
-            float height = bottom - top;
-
-            PointF leftTopPoint = new PointF(left, top);
-            PointF rightTopPoint = new PointF(right, top);
-            PointF leftBottomPoint = new PointF(left, bottom);
-            PointF rightBottomPoint = new PointF(right, bottom);
-
-            // Draw straight lines for the top and bottom of the oval
-            _graphics.DrawLine(Pens.Black, leftTopPoint, rightTopPoint);
-            _graphics.DrawLine(Pens.Black, leftBottomPoint, rightBottomPoint);
-
-            // Draw arcs for the left and right sides of the oval
-            RectangleF leftArcRect = new RectangleF(left - (height / 2), top, height, height);
-            RectangleF rightArcRect = new RectangleF(right - (height / 2), top, height, height);
-
-            if (leftArcRect.Width > 0 && leftArcRect.Height > 0)
+            SizeF textSize = _graphics.MeasureString(Text, font);
+            PointF leftTopPoint = new PointF(X, Y);
+            PointF rightTopPoint = new PointF(X + Width, Y);
+            PointF leftBottomPoint = new PointF(X, Y + Height);
+            PointF rightBottomPoint = new PointF(X + Width, Y + Height);
+            float textX = ((X + X + Width) / 2) - (textSize.Width / 2);
+            float textY = ((Y + Y + Height) / 2) - (textSize.Height / 2);
+            //float width = Math.Abs(X1 - X2);
+            //float height = Math.Abs(Y1 - Y2);
+            if (Width > 0 && Height > 0)
             {
+                _graphics.DrawLine(Pens.Black, leftTopPoint.X + Width / 5, leftTopPoint.Y, rightTopPoint.X - Width / 5, rightTopPoint.Y);
+                _graphics.DrawLine(Pens.Black, leftBottomPoint.X + Width / 5, leftBottomPoint.Y, rightBottomPoint.X - Width / 5, rightBottomPoint.Y);
+
+                RectangleF leftArcRect = new RectangleF(leftTopPoint.X, leftTopPoint.Y, 2 * Width / 5, Height);
+                //_graphics.DrawRectangle(Pens.Red, leftTopPoint.X, leftTopPoint.Y, 2*Width/3, Height);
+                RectangleF rightArcRect = new RectangleF((rightTopPoint.X - 2 * Width / 5), rightTopPoint.Y, 2 * Width / 5, Height);
+                //_graphics.DrawRectangle(Pens.Red, rightTopPoint.X, rightTopPoint.Y, height, height);
+
                 _graphics.DrawArc(Pens.Black, leftArcRect, 90, 180);
-            }
-            if (rightArcRect.Width > 0 && rightArcRect.Height > 0)
-            {
                 _graphics.DrawArc(Pens.Black, rightArcRect, -90, 180);
+                _graphics.DrawString(Text, font, brush, new PointF(textX, textY));
             }
-
-
-            // Draw text in the center
-            StringFormat format = new StringFormat();
-            format.Alignment = StringAlignment.Center;
-            format.LineAlignment = StringAlignment.Center;
-            _graphics.DrawString(Text, font, brush, new PointF((X1 + X2) / 2, (Y1 + Y2) / 2), format);
         }
-
-        public void DrawPolygon(float X1, float Y1, float X2, float Y2, string Text)
+        public void DrawPolygon(float X, float Y, float Width, float Height, string Text)
         {
+            SizeF textSize = _graphics.MeasureString(Text, font);
             PointF[] diamondes = new PointF[]
             {
-                new PointF((X1+X2)/2, Math.Max(Y1, Y2)),
-                new PointF(Math.Max(X1,X2), (Y1+Y2)/2),
-                new PointF((X1+X2)/2, Math.Min(Y1, Y2)),
-                new PointF(Math.Min(X1, X2), (Y1+Y2)/2)
+                new PointF((X + X + Width)/2, Math.Max(Y, Y + Height)),
+                new PointF(Math.Max(X, X + Width), (Y + Y +Height)/2),
+                new PointF((X + X + Width)/2, Math.Min(Y, Y + Height)),
+                new PointF(Math.Min(X, X + Width), (Y + Y +Height)/2)
             };
+            float textX = ((X + X + Width) / 2) - (textSize.Width / 2);
+            float textY = ((Y + Y + Height) / 2) - (textSize.Height / 2);
             _graphics.DrawPolygon(Pens.Black, diamondes);
-            _graphics.DrawString(Text, font, brush, new PointF((X1 + X2) / 2, (Y1 + Y2) / 2));
+            _graphics.DrawString(Text, font, brush, new PointF(textX, textY));
+        }
+        public void DrawBoundingBox(float X, float Y, float Width, float Height)
+        {
+            _graphics.DrawRectangle(new Pen(Color.HotPink, 5), X, Y, Width, Height);
         }
 
     }

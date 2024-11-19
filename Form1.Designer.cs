@@ -246,6 +246,7 @@
             this.shape_type_comboBox.Size = new System.Drawing.Size(49, 20);
             this.shape_type_comboBox.TabIndex = 5;
             this.shape_type_comboBox.Text = "形狀";
+            this.shape_type_comboBox.SelectedIndexChanged += new System.EventHandler(this.shape_type_comboBox_SelectedIndexChanged);
             // 
             // shape_text_textBox
             // 
@@ -253,6 +254,7 @@
             this.shape_text_textBox.Name = "shape_text_textBox";
             this.shape_text_textBox.Size = new System.Drawing.Size(67, 22);
             this.shape_text_textBox.TabIndex = 6;
+            this.shape_text_textBox.TextChanged += new System.EventHandler(this.shape_text_textBox_TextChanged);
             // 
             // shape_x_textBox
             // 
@@ -260,6 +262,7 @@
             this.shape_x_textBox.Name = "shape_x_textBox";
             this.shape_x_textBox.Size = new System.Drawing.Size(23, 22);
             this.shape_x_textBox.TabIndex = 7;
+            this.shape_x_textBox.TextChanged += new System.EventHandler(this.shape_x_textBox_TextChanged);
             // 
             // groupBox1
             // 
@@ -326,6 +329,7 @@
             this.shape_width_textBox.Name = "shape_width_textBox";
             this.shape_width_textBox.Size = new System.Drawing.Size(23, 22);
             this.shape_width_textBox.TabIndex = 13;
+            this.shape_width_textBox.TextChanged += new System.EventHandler(this.shape_width_textBox_TextChanged);
             // 
             // shape_height_textBox
             // 
@@ -333,6 +337,7 @@
             this.shape_height_textBox.Name = "shape_height_textBox";
             this.shape_height_textBox.Size = new System.Drawing.Size(23, 22);
             this.shape_height_textBox.TabIndex = 12;
+            this.shape_height_textBox.TextChanged += new System.EventHandler(this.shape_height_textBox_TextChanged);
             // 
             // shape_y_textBox
             // 
@@ -340,6 +345,7 @@
             this.shape_y_textBox.Name = "shape_y_textBox";
             this.shape_y_textBox.Size = new System.Drawing.Size(23, 22);
             this.shape_y_textBox.TabIndex = 11;
+            this.shape_y_textBox.TextChanged += new System.EventHandler(this.shape_y_textBox_TextChanged);
             // 
             // label1
             // 

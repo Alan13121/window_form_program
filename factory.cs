@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace hw2
 {
@@ -31,31 +32,24 @@ namespace hw2
             }
 
             shape.ID = ID;
-            shape.text = text;
+            shape.Text = text;
             shape.X = X;
             shape.Y = Y;
-            shape.Height = Height;
             shape.Width = Width;
-            shape.X1 = X;
-            shape.Y1 = Y;
-            shape.X2 = X + Width;
-            shape.Y2 = Y + Height;
-
+            shape.Height = Height;
             return shape;
         }
 
-        public void DrawShape(IDrawable shape, float X1, float Y1, float X2, float Y2, string text, string ShapeName)
+        public void DrawShape(IDrawable shape, float X, float Y, float Width , float Height, string text, string ShapeName)
         {
-            
-
             if (ShapeName == "Start")
-                shape.DrawEllipse(X1, Y1, X2, Y2, text);
+                shape.DrawEllipse(X, Y, Width, Height, text);
             else if (ShapeName == "Terminator")
-                shape.DrawOval(X1, Y1, X2, Y2, text);
+                shape.DrawOval(X, Y, Width, Height, text);
             else if (ShapeName == "Process")
-                shape.DrawRectangle(X1, Y1, X2, Y2, text);
+                shape.DrawRectangle(X, Y, Width, Height, text);
             else if (ShapeName == "Decision")
-                shape.DrawPolygon(X1, Y1, X2, Y2, text);
+                shape.DrawPolygon(X, Y, Width, Height, text);
         }
     }
 }

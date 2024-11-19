@@ -58,3 +58,13 @@ D:\作業中\視窗程式設計\hw3\hw3\obj\Debug\hw2.csproj.GenerateResource.ca
 D:\作業中\視窗程式設計\hw3\hw3\obj\Debug\hw2.csproj.CoreCompileInputs.cache
 D:\作業中\視窗程式設計\hw3\hw3\obj\Debug\hw2.exe
 D:\作業中\視窗程式設計\hw3\hw3\obj\Debug\hw2.pdb
+D:\作業中\視窗程式設計\gitlab\window_form_program\bin\Debug\hw2.exe.config
+D:\作業中\視窗程式設計\gitlab\window_form_program\bin\Debug\hw2.exe
+D:\作業中\視窗程式設計\gitlab\window_form_program\bin\Debug\hw2.pdb
+D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.csproj.AssemblyReference.cache
+D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.MyDrawing_Form.resources
+D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.Properties.Resources.resources
+D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.csproj.GenerateResource.cache
+D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.csproj.CoreCompileInputs.cache
+D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.exe
+D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.pdb

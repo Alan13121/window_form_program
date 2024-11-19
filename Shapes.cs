@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace hw2
 {
@@ -40,26 +42,67 @@ namespace hw2
     {
 
         public string ShapeName { get; set; }
-
         public int ID { get; set; }
-        public string text { get; set; }
-
+        public string Text { get; set; }
         public float X { get; set; }
         public float Y { get; set; }
         public float Width { get; set; }
         public float Height { get; set; }
 
-        public float X1 { get; set; }
-        public float Y1 { get; set; }
-        public float X2 { get; set; }
-        public float Y2 { get; set; }
 
-        
         public void DrawShape(IDrawable shape)
         {
             ShapeFactory fatory = new ShapeFactory();
-            fatory.DrawShape(shape,X1, Y1, X2, Y2, text, ShapeName);
+            fatory.DrawShape(shape, X, Y, Width, Height,Text, ShapeName);
             
+        }
+        public void DrawBoundingBox(Graphics g)
+        {
+            g.DrawRectangle(Pens.Gray, X, Y, Width, Height);
+        }
+        public void DrawBoundingBox(IDrawable boundingBox)
+        {
+            boundingBox.DrawBoundingBox(X, Y, Width, Height);
+        }
+        public void Normalize()
+        {
+            X = Math.Min(X, X + Width);
+            Y = Math.Min(Y, Y + Height);
+            Width = Math.Abs(Width);
+            Height = Math.Abs(Height);
+        }
+        public bool IsPointInShape(PointF point)
+        {
+            GraphicsPath path = new GraphicsPath(FillMode.Winding);
+            if (ShapeName == "Start")
+                path.AddEllipse(X, Y, Width, Height);
+            else if (ShapeName == "Terminator")
+            {
+                path.AddRectangle(new RectangleF(X + Width / 5, Y, 3 * Width / 5, Height));
+                RectangleF leftArcRect = new RectangleF(
+                    X,
+                    Y,
+                    2 * Width / 5,
+                    Height
+                );
+                RectangleF rightArcRect = new RectangleF(
+                    X + 3 * Width / 5,
+                    Y,
+                    2 * Width / 5,
+                    Height
+                );
+                path.AddArc(leftArcRect, 90, 180);
+                path.AddArc(rightArcRect, -90, 180);
+                //Console.WriteLine("PathData"+ path.PathData);
+            }
+            else if (ShapeName == "Process")
+                path.AddRectangle(new RectangleF(X, Y, Width, Height));
+            else if (ShapeName == "Decision")
+                path.AddPolygon(new PointF[] {new PointF((X + X + Width) / 2, Math.Max(Y, Y + Height)),
+                                                  new PointF(Math.Max(X, X + Width), (Y + Y + Height) / 2),
+                                                  new PointF((X + X + Width) / 2, Math.Min(Y, Y + Height)),
+                                                  new PointF(Math.Min(X, X + Width), (Y + Y + Height) / 2)});
+            return path.IsVisible(point);
         }
     }
 
