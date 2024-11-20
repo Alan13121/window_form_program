@@ -10,7 +10,7 @@ namespace hw2
     {
 
         private static readonly char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".ToCharArray();
-        
+
         public static string GenerateRandomString()
         {
             StringBuilder result = new StringBuilder();
@@ -21,7 +21,7 @@ namespace hw2
             {
                 result.Append(chars[random.Next(chars.Length)]);
             }
-            
+
             return result.ToString();
         }
     }

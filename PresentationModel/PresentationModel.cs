@@ -1,73 +1,136 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace hw2.PresentationModel
 {
     internal class PresentationModel : INotifyPropertyChanged
     {
         Model model;
+        Control canvas;
         public event PropertyChangedEventHandler PropertyChanged;
         bool isAddButtonEnabled = false;
-        bool isShapeComboBoxIndexChanged, isTextTextBoxChanged, isXTextBoxChanged, isYTextBoxChanged, isHTextBoxChanged, isWTextBoxChanged;
-
+        bool isShapeComboBoxCorrect = false;
+        bool isTextTextBoxCorrect = false;
+        bool isXTextBoxCorrect = false;
+        bool isYTextBoxCorrect = false;
+        bool isHeightTextBoxCorrect = false;
+        bool isWidthTextBoxCorrect = false;
+        Color shapeComboxTextColor = Color.Red;
+        Color textTextColor = Color.Red;
+        Color xTextColor = Color.Red;
+        Color yTextColor = Color.Red;
+        Color heightTextColor = Color.Red;
+        Color widthTextColor = Color.Red;
+        float output;
         public PresentationModel(Model model, Control canvas)
         {
             this.model = model;
-            isShapeComboBoxIndexChanged = isTextTextBoxChanged = isXTextBoxChanged = isYTextBoxChanged = isHTextBoxChanged = isWTextBoxChanged = false;
+            this.canvas = canvas;
 
-        }
-        public void TextTextBoxTextChanged(string text)
-        {
-            if (text != "")
-                isTextTextBoxChanged = true;
-            else
-                isTextTextBoxChanged = false;
-        }
-        public void XTextBoxTextChanged(string text)
-        {
-            if (text != "")
-                isXTextBoxChanged = true;
-            else
-                isXTextBoxChanged = false;
-        }
-        public void YTextBoxTextChanged(string text)
-        {
-            if (text != "")
-                isYTextBoxChanged = true;
-            else
-                isYTextBoxChanged = false;
-        }
-        public void HTextBoxTextChanged(string text)
-        {
-            if (text != "")
-                isHTextBoxChanged = true;
-            else
-                isHTextBoxChanged = false;
-        }
-        public void WTextBoxTextChanged(string text)
-        {
-            if (text != "")
-                isWTextBoxChanged = true;
-            else
-                isWTextBoxChanged = false;
         }
         public void ShapeComboBoxIndexChanged(int index)
         {
             if (index != -1)
-                isShapeComboBoxIndexChanged = true;
+            {
+                shapeComboxTextColor = Color.Black;
+                isShapeComboBoxCorrect = true;
+            }
+
             else
-                isShapeComboBoxIndexChanged = false;
+            {
+                shapeComboxTextColor = Color.Red;
+                isShapeComboBoxCorrect = false;
+            }
+
+            notify("shapeComboxTextColor");
+
         }
-        public void AllAttributeFilled()
+        public void TextTextBoxTextChanged(string text)
         {
-            isAddButtonEnabled = isShapeComboBoxIndexChanged && isTextTextBoxChanged && isXTextBoxChanged && isYTextBoxChanged && isHTextBoxChanged && isWTextBoxChanged;
-            //Console.WriteLine("isAddButtonEnabled:" + isAddButtonEnabled);
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                textTextColor = Color.Black;
+                isTextTextBoxCorrect = true;
+            }
+            else
+            {
+                textTextColor = Color.Red;
+                isTextTextBoxCorrect = false;
+            }
+            notify("textTextColor");
+        }
+        public void XTextBoxTextChanged(string text)
+        {
+            if (!string.IsNullOrWhiteSpace(text) && float.TryParse(text, out output))
+            {
+                xTextColor = Color.Black;
+                isXTextBoxCorrect = true;
+            }
+            else
+            {
+                xTextColor = Color.Red;
+                isXTextBoxCorrect = false;
+            }
+            notify("xTextColor");
+        }
+        public void YTextBoxTextChanged(string text)
+        {
+            if (!string.IsNullOrWhiteSpace(text) && float.TryParse(text, out output))
+            {
+                yTextColor = Color.Black;
+                isYTextBoxCorrect = true;
+            }
+            else
+            {
+                yTextColor = Color.Red;
+                isYTextBoxCorrect = false;
+            }
+            notify("yTextColor");
+        }
+        public void HeightTextBoxTextChanged(string text)
+        {
+            if (!string.IsNullOrWhiteSpace(text) && float.TryParse(text, out output))
+            {
+                heightTextColor = Color.Black;
+                isHeightTextBoxCorrect = true;
+            }
+            else
+            {
+                heightTextColor = Color.Red;
+                isHeightTextBoxCorrect = false;
+            }
+            notify("heightTextColor");
+        }
+        public void WidthTextBoxTextChanged(string text)
+        {
+            if (!string.IsNullOrWhiteSpace(text) && float.TryParse(text, out output))
+            {
+                widthTextColor = Color.Black;
+                isWidthTextBoxCorrect = true;
+            }
+            else
+            {
+                widthTextColor = Color.Red;
+                isWidthTextBoxCorrect = false;
+            }
+            notify("widthTextColor");
+        }
+        public void CheckAllCorrect()
+        {
+            isAddButtonEnabled = isShapeComboBoxCorrect && isTextTextBoxCorrect && isXTextBoxCorrect && isYTextBoxCorrect && isHeightTextBoxCorrect && isWidthTextBoxCorrect;
+
             notify("isAddButtonEnabled");
+        }
+        private void notify(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         public bool IsAddButtonEnabled
         {
@@ -76,14 +139,47 @@ namespace hw2.PresentationModel
                 return isAddButtonEnabled;
             }
         }
-        private void notify(string propertyName)
+        public Color ShapeComboxTextColor
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            get
+            {
+                return shapeComboxTextColor;
+            }
         }
-        public void Draw(System.Drawing.Graphics graphics)
+        public Color TextTextColor
         {
-            model.Draw(new WindowsFormsGraphicsAdaptor(graphics));
+            get
+            {
+                return textTextColor;
+            }
+        }
+        public Color XTextColor
+        {
+            get
+            {
+                return xTextColor;
+            }
+        }
+        public Color YTextColor
+        {
+            get
+            {
+                return yTextColor;
+            }
+        }
+        public Color HeightTextColor
+        {
+            get
+            {
+                return heightTextColor;
+            }
+        }
+        public Color WidthTextColor
+        {
+            get
+            {
+                return widthTextColor;
+            }
         }
     }
 }

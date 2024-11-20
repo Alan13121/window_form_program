@@ -16,7 +16,7 @@ namespace hw2
         void MouseUp(Model m, PointF point);
         void KeyDown(Model m, int keyValue);
         void KeyUp(Model m, int keyValue);
-        void SetShapeType(Model m, int shapeType, int ID);
+        void SetShapeType(Model m, string shapeType, int ID);
         void DeleteShape(Model m, int ID);
     }
 }

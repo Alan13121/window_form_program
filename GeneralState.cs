@@ -23,13 +23,10 @@ namespace hw2
         {
             mouseDownPosition = point;
             isMouseDown = true;
-            //Console.WriteLine("PS MouseDown");
             foreach (Shape shape in Enumerable.Reverse(m.GetShapes()))
             {
-                //Console.WriteLine(shape.ShapeName);
                 if (shape.IsPointInShape(point))
                 {
-                    //Console.WriteLine("isCtrlDown:" + isCtrlKeyDown);
                     if (isCtrlKeyDown)
                     {
                         selectedShapes.Add(shape);
@@ -38,7 +35,6 @@ namespace hw2
                     {
                         selectedShapes.Clear();
                         selectedShapes.Add(shape);
-                        //Console.WriteLine("select:" + shape.ShapeName);
                     }
                     return;
                 }
@@ -58,7 +54,6 @@ namespace hw2
         {
             if (mouseDownPosition.X > 0 && mouseDownPosition.Y > 0 && isMouseDown)
             {
-                //Console.WriteLine("selectedShapeList num:" + selectedShapes.Count());
                 foreach (Shape shape in selectedShapes)
                 {
                     shape.X += point.X - mouseDownPosition.X;
@@ -88,25 +83,21 @@ namespace hw2
 
         public void KeyDown(Model m, int keyValue)
         {
-            //Console.WriteLine("PS KeyDown");
             if (keyValue == CTRL_KEY)
                 isCtrlKeyDown = true;
         }
 
         public void KeyUp(Model m, int keyValue)
         {
-            //Console.WriteLine("PS KeyUp");
             if (keyValue == CTRL_KEY)
                 isCtrlKeyDown = false;
         }
-        public void SetShapeType(Model m, int shapeType, int ID)
+        public void SetShapeType(Model m, string shapeType, int ID)
         {
-            //do nothing
         }
         public void DeleteShape(Model m, int ID)
         {
             Shape shapeToRemove = m.GetShapes().FirstOrDefault(x => x.ID == ID);
-            //Console.WriteLine("ShapeInfo:" + shapeToRemove.ShapeName);
             m.remove_shape(ID);
             selectedShapes.Remove(shapeToRemove);
         }

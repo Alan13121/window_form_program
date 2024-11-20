@@ -42,17 +42,13 @@ namespace hw2.PresentationModel
             PointF rightBottomPoint = new PointF(X + Width, Y + Height);
             float textX = ((X + X + Width) / 2) - (textSize.Width / 2);
             float textY = ((Y + Y + Height) / 2) - (textSize.Height / 2);
-            //float width = Math.Abs(X1 - X2);
-            //float height = Math.Abs(Y1 - Y2);
             if (Width > 0 && Height > 0)
             {
                 _graphics.DrawLine(Pens.Black, leftTopPoint.X + Width / 5, leftTopPoint.Y, rightTopPoint.X - Width / 5, rightTopPoint.Y);
                 _graphics.DrawLine(Pens.Black, leftBottomPoint.X + Width / 5, leftBottomPoint.Y, rightBottomPoint.X - Width / 5, rightBottomPoint.Y);
 
                 RectangleF leftArcRect = new RectangleF(leftTopPoint.X, leftTopPoint.Y, 2 * Width / 5, Height);
-                //_graphics.DrawRectangle(Pens.Red, leftTopPoint.X, leftTopPoint.Y, 2*Width/3, Height);
                 RectangleF rightArcRect = new RectangleF((rightTopPoint.X - 2 * Width / 5), rightTopPoint.Y, 2 * Width / 5, Height);
-                //_graphics.DrawRectangle(Pens.Red, rightTopPoint.X, rightTopPoint.Y, height, height);
 
                 _graphics.DrawArc(Pens.Black, leftArcRect, 90, 180);
                 _graphics.DrawArc(Pens.Black, rightArcRect, -90, 180);
@@ -76,7 +72,7 @@ namespace hw2.PresentationModel
         }
         public void DrawBoundingBox(float X, float Y, float Width, float Height)
         {
-            _graphics.DrawRectangle(new Pen(Color.HotPink, 5), X, Y, Width, Height);
+            _graphics.DrawRectangle(new Pen(Color.Red, 5), X, Y, Width, Height);
         }
 
     }

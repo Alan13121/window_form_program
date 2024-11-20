@@ -10,10 +10,10 @@ using System.Drawing.Drawing2D;
 
 namespace hw2
 {
-    
+
     public class Shapes
     {
-        
+
         List<Shape> Shapes_list = new List<Shape>();
         ShapeFactory fatory = new ShapeFactory();
         int ID_Count = 1;
@@ -38,7 +38,7 @@ namespace hw2
         }
 
     }
-    public class Shape
+    public abstract class Shape
     {
 
         public string ShapeName { get; set; }
@@ -50,12 +50,7 @@ namespace hw2
         public float Height { get; set; }
 
 
-        public void DrawShape(IDrawable shape)
-        {
-            ShapeFactory fatory = new ShapeFactory();
-            fatory.DrawShape(shape, X, Y, Width, Height,Text, ShapeName);
-            
-        }
+        public abstract void DrawShape(IDrawable shape);
         public void DrawBoundingBox(Graphics g)
         {
             g.DrawRectangle(Pens.Gray, X, Y, Width, Height);
@@ -71,39 +66,7 @@ namespace hw2
             Width = Math.Abs(Width);
             Height = Math.Abs(Height);
         }
-        public bool IsPointInShape(PointF point)
-        {
-            GraphicsPath path = new GraphicsPath(FillMode.Winding);
-            if (ShapeName == "Start")
-                path.AddEllipse(X, Y, Width, Height);
-            else if (ShapeName == "Terminator")
-            {
-                path.AddRectangle(new RectangleF(X + Width / 5, Y, 3 * Width / 5, Height));
-                RectangleF leftArcRect = new RectangleF(
-                    X,
-                    Y,
-                    2 * Width / 5,
-                    Height
-                );
-                RectangleF rightArcRect = new RectangleF(
-                    X + 3 * Width / 5,
-                    Y,
-                    2 * Width / 5,
-                    Height
-                );
-                path.AddArc(leftArcRect, 90, 180);
-                path.AddArc(rightArcRect, -90, 180);
-                //Console.WriteLine("PathData"+ path.PathData);
-            }
-            else if (ShapeName == "Process")
-                path.AddRectangle(new RectangleF(X, Y, Width, Height));
-            else if (ShapeName == "Decision")
-                path.AddPolygon(new PointF[] {new PointF((X + X + Width) / 2, Math.Max(Y, Y + Height)),
-                                                  new PointF(Math.Max(X, X + Width), (Y + Y + Height) / 2),
-                                                  new PointF((X + X + Width) / 2, Math.Min(Y, Y + Height)),
-                                                  new PointF(Math.Min(X, X + Width), (Y + Y + Height) / 2)});
-            return path.IsVisible(point);
-        }
+        public abstract bool IsPointInShape(PointF point);
     }
 
     public class Start : Shape
@@ -111,6 +74,19 @@ namespace hw2
         public Start()
         {
             ShapeName = "Start";
+        }
+        public override void DrawShape(IDrawable shape)
+        {
+            shape.DrawEllipse(X, Y, Width, Height, Text);
+        }
+        public override bool IsPointInShape(PointF point)
+        {
+
+            GraphicsPath path = new GraphicsPath(FillMode.Winding);
+
+            path.AddEllipse(X, Y, Width, Height);
+
+            return path.IsVisible(point);
         }
 
     }
@@ -120,6 +96,33 @@ namespace hw2
         {
             ShapeName = "Terminator";
         }
+        public override void DrawShape(IDrawable shape)
+        {
+            shape.DrawOval(X, Y, Width, Height, Text);
+        }
+        public override bool IsPointInShape(PointF point)
+        {
+
+            GraphicsPath path = new GraphicsPath(FillMode.Winding);
+
+            path.AddRectangle(new RectangleF(X + Width / 5, Y, 3 * Width / 5, Height));
+            RectangleF leftArcRect = new RectangleF(
+                X,
+                Y,
+                2 * Width / 5,
+                Height
+            );
+            RectangleF rightArcRect = new RectangleF(
+                X + 3 * Width / 5,
+                Y,
+                2 * Width / 5,
+                Height
+            );
+            path.AddArc(leftArcRect, 90, 180);
+            path.AddArc(rightArcRect, -90, 180);
+
+            return path.IsVisible(point);
+        }
     }
 
     public class Process : Shape
@@ -128,6 +131,19 @@ namespace hw2
         {
             ShapeName = "Process";
         }
+        public override void DrawShape(IDrawable shape)
+        {
+            shape.DrawRectangle(X, Y, Width, Height, Text);
+        }
+        public override bool IsPointInShape(PointF point)
+        {
+
+            GraphicsPath path = new GraphicsPath(FillMode.Winding);
+
+            path.AddRectangle(new RectangleF(X, Y, Width, Height));
+
+            return path.IsVisible(point);
+        }
     }
     public class Decision : Shape
     {
@@ -135,6 +151,21 @@ namespace hw2
         {
             ShapeName = "Decision";
         }
+        public override void DrawShape(IDrawable shape)
+        {
+            shape.DrawPolygon(X, Y, Width, Height, Text);
+        }
+        public override bool IsPointInShape(PointF point)
+        {
+
+            GraphicsPath path = new GraphicsPath(FillMode.Winding);
+
+            path.AddPolygon(new PointF[] {new PointF((X + X + Width) / 2, Math.Max(Y, Y + Height)),
+                                                  new PointF(Math.Max(X, X + Width), (Y + Y + Height) / 2),
+                                                  new PointF((X + X + Width) / 2, Math.Min(Y, Y + Height)),
+                                                  new PointF(Math.Min(X, X + Width), (Y + Y + Height) / 2)});
+            return path.IsVisible(point);
+        }
     }
-    
+
 }

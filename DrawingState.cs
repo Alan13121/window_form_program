@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace hw2
 {
@@ -12,20 +13,18 @@ namespace hw2
         PointF ul_point, lr_point;
         bool isPressed;
         Shape hintShape;
-        GeneralState pointState;
         int type = -1;
-        //int ID = 1;
-        
-        public DrawingState(GeneralState pointState)
+        enum KindsOfShape
         {
-            this.pointState = pointState;
-            //Console.WriteLine("DrawingState Generated!");
+            Start = 0,
+            Terminator,
+            Process,
+            Decision
         }
         public void Initialize(Model m)
         {
             isPressed = false;
             hintShape = null;
-            //Console.WriteLine("DrawingState Initialized!");
         }
         public void OnPaint(Model m, IDrawable g)
         {
@@ -41,7 +40,6 @@ namespace hw2
         }
         public void MouseDown(Model m, PointF point)
         {
-            //Console.WriteLine("DS MouseDown");
             isPressed = true;
             ul_point = lr_point = point;
             hintShape.X = point.X;
@@ -79,28 +77,13 @@ namespace hw2
         public void KeyUp(Model m, int keyValue)
         {
         }
-        public void SetShapeType(Model m, int shapeType, int ID)
+        public void SetShapeType(Model m, string shapeType, int ID)
         {
-            hintShape = new Shape();
-            type = shapeType;
-            switch (type)
-            {
-                case 0:
-                    hintShape.ShapeName = "Start";
-                    break;
-                case 1:
-                    hintShape.ShapeName = "Terminator";
-                    break;
-                case 2:
-                    hintShape.ShapeName = "Process";
-                    break;
-                case 3:
-                    hintShape.ShapeName = "Decision";
-                    break;
-                default:
-                    break;
-            }
-            hintShape.ID = ID;
+            KindsOfShape enumType = (KindsOfShape)Enum.Parse(typeof(KindsOfShape), shapeType);
+            type = (int)enumType;
+            ShapeFactory factory = new ShapeFactory();
+            hintShape = factory.CreateShape(shapeType, ID, "0", 0, 0, 0, 0);
+
         }
         public void DeleteShape(Model m, int ID)
         {

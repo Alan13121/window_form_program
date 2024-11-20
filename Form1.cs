@@ -1,4 +1,5 @@
-﻿using System;
+﻿using hw2.PresentationModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,26 +32,29 @@ namespace hw2
             _presentationModel = new PresentationModel.PresentationModel(model, Canva);
             model._modelChanged += HandleModelChanged;
             Controls.Add(Canva);
+            this.DoubleBuffered = true;
             add_shape_buttom.DataBindings.Add("Enabled", _presentationModel, "isAddButtonEnabled");
-            add_shape_buttom.Enabled = false;
+            shape_type_comboBox.DataBindings.Add("ForeColor", _presentationModel, "shapeComboxTextColor");
+            Text_label.DataBindings.Add("ForeColor", _presentationModel, "textTextColor");
+            X_label.DataBindings.Add("ForeColor", _presentationModel, "xTextColor");
+            Y_label.DataBindings.Add("ForeColor", _presentationModel, "yTextColor");
+            Height_label.DataBindings.Add("ForeColor", _presentationModel, "heightTextColor");
+            Width_label.DataBindings.Add("ForeColor", _presentationModel, "widthTextColor");
+            GeneralStateBottom.Checked = true;
         }
 
 
         private void add_shape_buttom_Click(object sender, EventArgs e)
         {
             string[] new_shape = { shape_type_comboBox.Text, shape_text_textBox.Text, shape_x_textBox.Text, shape_y_textBox.Text, shape_height_textBox.Text, shape_width_textBox.Text };
-           
-           
+            List<Shape> shapelist = model.enter_new_shape(new_shape);
 
-            Canva.Invalidate();
-            model.enter_new_shape(new_shape);
-
-            List<Shape> shapelist = model.GetShapes();
             shape_info_dataGridView.Rows.Clear();
             for (int i = 0; i < shapelist.Count; i++)
             {
                 shape_info_dataGridView.Rows.Add("刪除", shapelist[i].ID, shapelist[i].ShapeName, shapelist[i].Text, shapelist[i].X, shapelist[i].Y, shapelist[i].Height, shapelist[i].Width);
             }
+            Canva.Invalidate();
         }
 
         private void shape_info_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -64,7 +68,6 @@ namespace hw2
             }
 
         }
-        //Invalidate(true);
         public void HandleModelChanged()
         {
             Canva.Invalidate();
@@ -74,91 +77,71 @@ namespace hw2
         private void Canva_Paint(object sender, PaintEventArgs e)
         {
             var shapeList = model.GetShapes();
-            _presentationModel.Draw(e.Graphics);
+            model.Draw(new WindowsFormsGraphicsAdaptor(e.Graphics));
             shape_info_dataGridView.Rows.Clear();
             for (int i = 0; i < shapeList.Count; i++)
             {
                 shape_info_dataGridView.Rows.Add("刪除", shapeList[i].ID, shapeList[i].ShapeName, shapeList[i].Text, shapeList[i].X, shapeList[i].Y, shapeList[i].Height, shapeList[i].Width);
-
             }
 
 
         }
         private void Canva_MouseDown(object sender, MouseEventArgs e)
         {
-            
             model.PointerPressed(e.X, e.Y);
-
         }
         private void Canva_MouseUp(object sender, MouseEventArgs e)
         {
             model.PointerReleased(e.X, e.Y);
 
-            //ResetToolButtonColors();
             Canva.Cursor = Cursors.Default;
             StartToolButton.Checked = false;
             TerminatorToolButton.Checked = false;
             DecisionToolButton.Checked = false;
             ProcessToolButton.Checked = false;
+            GeneralStateBottom.Checked = true;
         }
 
         private void Canva_MouseMove(object sender, MouseEventArgs e)
         {
-            
             model.PointerMoved(e.X, e.Y);
-
         }
 
-        /*private void ResetToolButtonColors()
-        {
-            StartToolButton.BackColor = Color.White;
-            TerminatorToolButton.BackColor = Color.White;
-            ProcessToolButton.BackColor = Color.White;
-            DecisionToolButton.BackColor = Color.White;
-        }*/
 
-        private void SetToolButtonSelected(System.Windows.Forms.ToolStripButton button, int shapeType)
+        private void SetToolButtonSelected(System.Windows.Forms.ToolStripButton button, string shapeType)
         {
-            model.ChangeToDrawingState();
-            model.SetType(shapeType);
-            //Canva.Cursor = Cursors.Cross;
+            Canva.Cursor = Cursors.Cross;
+            model.ChangeToDrawingState(shapeType);
         }
-
         private void StartToolButton_Click(object sender, EventArgs e)
         {
-            SetToolButtonSelected(StartToolButton, 0);
+            SetToolButtonSelected(StartToolButton, "Start");
         }
 
         private void TerminatorToolButton_Click(object sender, EventArgs e)
         {
-            SetToolButtonSelected(TerminatorToolButton, 1);
+            SetToolButtonSelected(TerminatorToolButton, "Terminator");
         }
 
         private void ProcessToolButton_Click(object sender, EventArgs e)
         {
-            SetToolButtonSelected(ProcessToolButton, 2);
+            SetToolButtonSelected(ProcessToolButton, "Process");
         }
 
         private void DecisionToolButton_Click(object sender, EventArgs e)
         {
-            SetToolButtonSelected(DecisionToolButton, 3);
+            SetToolButtonSelected(DecisionToolButton, "Decision");
         }
-
+        private void GeneralStateBottom_Click(object sender, EventArgs e)
+        {
+            model.ChangeToGeneralState();
+            Canva.Cursor = Cursors.Default;
+        }
 
         private void toolStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
         {
-            Canva.Cursor = Cursors.Cross;
-
-            // 從事件參數中取得被點擊的按鈕
             ToolStripButton clickedButton = e.ClickedItem as ToolStripButton;
 
-            // 如果 clickedButton 為 null，則表示點擊的項目不是按鈕，直接返回
-            if (clickedButton == null)
-            {
-                return;
-            }
-
-            // 遍歷所有 ToolStripItem，將所有按鈕的 Checked 設為 false
             foreach (ToolStripItem item in toolStrip1.Items)
             {
                 if (item is ToolStripButton button)
@@ -166,45 +149,45 @@ namespace hw2
                     button.Checked = false;
                 }
             }
-
-            // 將當前點擊的按鈕 Checked 設為 true
             clickedButton.Checked = true;
         }
 
         private void shape_type_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _presentationModel.ShapeComboBoxIndexChanged(shape_type_comboBox.SelectedIndex);
-            _presentationModel.AllAttributeFilled();
+            _presentationModel.CheckAllCorrect();
         }
 
         private void shape_text_textBox_TextChanged(object sender, EventArgs e)
         {
             _presentationModel.TextTextBoxTextChanged(shape_text_textBox.Text);
-            _presentationModel.AllAttributeFilled();
+            _presentationModel.CheckAllCorrect();
         }
 
         private void shape_x_textBox_TextChanged(object sender, EventArgs e)
         {
             _presentationModel.XTextBoxTextChanged(shape_x_textBox.Text);
-            _presentationModel.AllAttributeFilled();
+            _presentationModel.CheckAllCorrect();
         }
 
         private void shape_y_textBox_TextChanged(object sender, EventArgs e)
         {
             _presentationModel.YTextBoxTextChanged(shape_y_textBox.Text);
-            _presentationModel.AllAttributeFilled();
+            _presentationModel.CheckAllCorrect();
         }
 
         private void shape_height_textBox_TextChanged(object sender, EventArgs e)
         {
-            _presentationModel.HTextBoxTextChanged(shape_height_textBox.Text);
-            _presentationModel.AllAttributeFilled();
+            _presentationModel.HeightTextBoxTextChanged(shape_height_textBox.Text);
+            _presentationModel.CheckAllCorrect();
         }
 
         private void shape_width_textBox_TextChanged(object sender, EventArgs e)
         {
-            _presentationModel.WTextBoxTextChanged(shape_width_textBox.Text);
-            _presentationModel.AllAttributeFilled();
+            _presentationModel.WidthTextBoxTextChanged(shape_width_textBox.Text);
+            _presentationModel.CheckAllCorrect();
         }
+
+
     }
 }

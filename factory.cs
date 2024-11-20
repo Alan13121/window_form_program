@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,16 +42,7 @@ namespace hw2
             return shape;
         }
 
-        public void DrawShape(IDrawable shape, float X, float Y, float Width , float Height, string text, string ShapeName)
-        {
-            if (ShapeName == "Start")
-                shape.DrawEllipse(X, Y, Width, Height, text);
-            else if (ShapeName == "Terminator")
-                shape.DrawOval(X, Y, Width, Height, text);
-            else if (ShapeName == "Process")
-                shape.DrawRectangle(X, Y, Width, Height, text);
-            else if (ShapeName == "Decision")
-                shape.DrawPolygon(X, Y, Width, Height, text);
-        }
+
+
     }
 }

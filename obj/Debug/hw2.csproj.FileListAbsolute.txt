@@ -68,3 +68,13 @@ D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.csproj.
 D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.csproj.CoreCompileInputs.cache
 D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.exe
 D:\作業中\視窗程式設計\gitlab\window_form_program\obj\Debug\hw2.pdb
+C:\Users\rewqa\Desktop\視窗\git\window_form_program\bin\Debug\hw2.exe.config
+C:\Users\rewqa\Desktop\視窗\git\window_form_program\bin\Debug\hw2.exe
+C:\Users\rewqa\Desktop\視窗\git\window_form_program\bin\Debug\hw2.pdb
+C:\Users\rewqa\Desktop\視窗\git\window_form_program\obj\Debug\hw2.csproj.AssemblyReference.cache
+C:\Users\rewqa\Desktop\視窗\git\window_form_program\obj\Debug\hw2.MyDrawing_Form.resources
+C:\Users\rewqa\Desktop\視窗\git\window_form_program\obj\Debug\hw2.Properties.Resources.resources
+C:\Users\rewqa\Desktop\視窗\git\window_form_program\obj\Debug\hw2.csproj.GenerateResource.cache
+C:\Users\rewqa\Desktop\視窗\git\window_form_program\obj\Debug\hw2.csproj.CoreCompileInputs.cache
+C:\Users\rewqa\Desktop\視窗\git\window_form_program\obj\Debug\hw2.exe
+C:\Users\rewqa\Desktop\視窗\git\window_form_program\obj\Debug\hw2.pdb
