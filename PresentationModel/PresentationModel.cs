@@ -10,10 +10,10 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace hw2.PresentationModel
 {
-    internal class PresentationModel : INotifyPropertyChanged
+    public class PresentationModel : INotifyPropertyChanged
     {
         Model model;
-        Control canvas;
+        //Control canvas;
         public event PropertyChangedEventHandler PropertyChanged;
         bool isAddButtonEnabled = false;
         bool isShapeComboBoxCorrect = false;
@@ -29,10 +29,10 @@ namespace hw2.PresentationModel
         Color heightTextColor = Color.Red;
         Color widthTextColor = Color.Red;
         float output;
-        public PresentationModel(Model model, Control canvas)
+        public PresentationModel(Model model)//, Control canvas
         {
             this.model = model;
-            this.canvas = canvas;
+            //this.canvas = canvas;
 
         }
         public void ShapeComboBoxIndexChanged(int index)

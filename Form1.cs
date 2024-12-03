@@ -29,7 +29,7 @@ namespace hw2
             Canva.MouseUp += Canva_MouseUp;
             Canva.MouseMove += Canva_MouseMove;
             Canva.Paint += Canva_Paint;
-            _presentationModel = new PresentationModel.PresentationModel(model, Canva);
+            _presentationModel = new PresentationModel.PresentationModel(model);
             model._modelChanged += HandleModelChanged;
             Controls.Add(Canva);
             this.DoubleBuffered = true;

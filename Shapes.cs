@@ -48,7 +48,7 @@ namespace hw2
         public float Y { get; set; }
         public float Width { get; set; }
         public float Height { get; set; }
-
+        public PointF OrangeDot { get; set; }
 
         public abstract void DrawShape(IDrawable shape);
         public void DrawBoundingBox(Graphics g)
@@ -57,8 +57,10 @@ namespace hw2
         }
         public void DrawBoundingBox(IDrawable boundingBox)
         {
-            boundingBox.DrawBoundingBox(X, Y, Width, Height);
+            boundingBox.DrawBoundingBox(X, Y, Width, Height, Text, OrangeDot);
+
         }
+
         public void Normalize()
         {
             X = Math.Min(X, X + Width);
@@ -67,6 +69,26 @@ namespace hw2
             Height = Math.Abs(Height);
         }
         public abstract bool IsPointInShape(PointF point);
+        public bool IsPointOnOrangeDot(PointF point)
+        {
+
+            GraphicsPath path = new GraphicsPath(FillMode.Winding);
+
+            using (Bitmap bmp = new Bitmap(1, 1))
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                Font font = new Font("Arial", 16, FontStyle.Bold);
+                SizeF textSize = g.MeasureString(Text, font);
+                path.AddEllipse(OrangeDot.X - 5 + textSize.Width / 2, OrangeDot.Y - 5, 10, 10);
+            }
+            //OrangeDot.X-5+ textSize.Width/2, OrangeDot.Y-5, 10, 10
+            
+            
+
+            //Console.WriteLine(path.IsVisible(point));
+            Console.WriteLine(path);
+            return path.IsVisible(point);
+        }
     }
 
     public class Start : Shape
@@ -78,6 +100,7 @@ namespace hw2
         public override void DrawShape(IDrawable shape)
         {
             shape.DrawEllipse(X, Y, Width, Height, Text);
+            shape.DrawText(X, Y, Width, Height, Text, OrangeDot);
         }
         public override bool IsPointInShape(PointF point)
         {
@@ -99,6 +122,7 @@ namespace hw2
         public override void DrawShape(IDrawable shape)
         {
             shape.DrawOval(X, Y, Width, Height, Text);
+            shape.DrawText(X, Y, Width, Height, Text, OrangeDot);
         }
         public override bool IsPointInShape(PointF point)
         {
@@ -134,6 +158,7 @@ namespace hw2
         public override void DrawShape(IDrawable shape)
         {
             shape.DrawRectangle(X, Y, Width, Height, Text);
+            shape.DrawText(X, Y, Width, Height, Text, OrangeDot);
         }
         public override bool IsPointInShape(PointF point)
         {
@@ -154,6 +179,7 @@ namespace hw2
         public override void DrawShape(IDrawable shape)
         {
             shape.DrawPolygon(X, Y, Width, Height, Text);
+            shape.DrawText(X, Y, Width, Height, Text, OrangeDot);
         }
         public override bool IsPointInShape(PointF point)
         {

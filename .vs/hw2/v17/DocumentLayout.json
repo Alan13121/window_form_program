@@ -1,45 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\",
+  "WorkspaceRootPath": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|c:\\users\\rewqa\\desktop\\\u8996\u7A97\\git\\window_form_program\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\drawingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:drawingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|c:\\users\\rewqa\\desktop\\\u8996\u7A97\\git\\window_form_program\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\shapes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:shapes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|c:\\users\\rewqa\\desktop\\\u8996\u7A97\\git\\window_form_program\\randomstringbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:randomstringbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\generalstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|d:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\generalstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:generalstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\factory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:factory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|d:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\drawingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:drawingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\presentationmodel\\presentationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|d:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\presentationmodel\\windowsformsgraphicsadaptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:presentationmodel\\windowsformsgraphicsadaptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\presentationmodel\\presentationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:presentationmodel\\presentationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|d:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\shapes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:shapes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|d:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\idrawable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:idrawable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|d:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\factory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:factory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A1F70CB5-C0F9-4925-B6A9-18082D7B0BA6}|hw2.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -50,15 +50,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Form1.cs [\u8A2D\u8A08]",
-              "DocumentMoniker": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\Form1.cs",
+              "DocumentMoniker": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\Form1.cs [\u8A2D\u8A08]",
+              "ToolTip": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\Form1.cs [\u8A2D\u8A08]",
               "RelativeToolTip": "Form1.cs [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T16:37:02.361Z",
@@ -67,119 +67,120 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RandomStringBuilder.cs",
-              "DocumentMoniker": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\RandomStringBuilder.cs",
-              "RelativeDocumentMoniker": "RandomStringBuilder.cs",
-              "ToolTip": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\RandomStringBuilder.cs",
-              "RelativeToolTip": "RandomStringBuilder.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T06:33:41.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\Form1.Designer.cs",
-              "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AgIAALoBAAAAAAAAAAAEwMgBAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T06:06:47.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAjwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T05:34:40.918Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DrawingState.cs",
-              "DocumentMoniker": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\DrawingState.cs",
-              "RelativeDocumentMoniker": "DrawingState.cs",
-              "ToolTip": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\DrawingState.cs",
-              "RelativeToolTip": "DrawingState.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAADgv0YAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T17:27:44.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Model.cs",
-              "DocumentMoniker": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\Model.cs",
+              "DocumentMoniker": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\Model.cs",
               "RelativeDocumentMoniker": "Model.cs",
-              "ToolTip": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\Model.cs",
+              "ToolTip": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\Model.cs",
               "RelativeToolTip": "Model.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwE4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAADwvycAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T17:03:39.338Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PresentationModel.cs",
-              "DocumentMoniker": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\PresentationModel\\PresentationModel.cs",
-              "RelativeDocumentMoniker": "PresentationModel\\PresentationModel.cs",
-              "ToolTip": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\PresentationModel\\PresentationModel.cs",
-              "RelativeToolTip": "PresentationModel\\PresentationModel.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "factory.cs",
+              "DocumentMoniker": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\factory.cs",
+              "RelativeDocumentMoniker": "factory.cs",
+              "ToolTip": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\factory.cs",
+              "RelativeToolTip": "factory.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwDYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T18:27:23.791Z",
+              "WhenOpened": "2024-12-03T17:54:53.046Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Shapes.cs",
-              "DocumentMoniker": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\Shapes.cs",
+              "DocumentMoniker": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\Shapes.cs",
               "RelativeDocumentMoniker": "Shapes.cs",
-              "ToolTip": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\Shapes.cs",
+              "ToolTip": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\Shapes.cs",
               "RelativeToolTip": "Shapes.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwGIAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAUwLUAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T18:56:05.391Z",
+              "WhenOpened": "2024-12-03T17:40:26.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "factory.cs",
-              "DocumentMoniker": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\factory.cs",
-              "RelativeDocumentMoniker": "factory.cs",
-              "ToolTip": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\factory.cs",
-              "RelativeToolTip": "factory.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAewA4AAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T13:23:52.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "GeneralState.cs",
-              "DocumentMoniker": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\GeneralState.cs",
+              "DocumentMoniker": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\GeneralState.cs",
               "RelativeDocumentMoniker": "GeneralState.cs",
-              "ToolTip": "C:\\Users\\rewqa\\Desktop\\\u8996\u7A97\\git\\window_form_program\\GeneralState.cs",
+              "ToolTip": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\GeneralState.cs",
               "RelativeToolTip": "GeneralState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAADwvywAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T17:32:36.749Z",
+              "WhenOpened": "2024-12-03T17:32:38.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DrawingState.cs",
+              "DocumentMoniker": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\DrawingState.cs",
+              "RelativeDocumentMoniker": "DrawingState.cs",
+              "ToolTip": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\DrawingState.cs",
+              "RelativeToolTip": "DrawingState.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAcwD4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T17:37:04.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PresentationModel.cs",
+              "DocumentMoniker": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\PresentationModel\\PresentationModel.cs",
+              "RelativeDocumentMoniker": "PresentationModel\\PresentationModel.cs",
+              "ToolTip": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\PresentationModel\\PresentationModel.cs",
+              "RelativeToolTip": "PresentationModel\\PresentationModel.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAQwKkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T18:27:23.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAIwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T14:53:05.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WindowsFormsGraphicsAdaptor.cs",
+              "DocumentMoniker": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\PresentationModel\\WindowsFormsGraphicsAdaptor.cs",
+              "RelativeDocumentMoniker": "PresentationModel\\WindowsFormsGraphicsAdaptor.cs",
+              "ToolTip": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\PresentationModel\\WindowsFormsGraphicsAdaptor.cs",
+              "RelativeToolTip": "PresentationModel\\WindowsFormsGraphicsAdaptor.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAUwEwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T17:51:48.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IDrawable.cs",
+              "DocumentMoniker": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\IDrawable.cs",
+              "RelativeDocumentMoniker": "IDrawable.cs",
+              "ToolTip": "D:\\\u4F5C\u696D\u4E2D\\\u8996\u7A97\u7A0B\u5F0F\u8A2D\u8A08\\gitlab\\window_form_program\\IDrawable.cs",
+              "RelativeToolTip": "IDrawable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T19:24:51.195Z",
               "EditorCaption": ""
             }
           ]

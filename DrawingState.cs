@@ -5,11 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace hw2
 {
+    
     internal class DrawingState : IState
     {
+        Graphics _graphics;
         PointF ul_point, lr_point;
         bool isPressed;
         Shape hintShape;
@@ -65,6 +68,17 @@ namespace hw2
                 isPressed = false;
                 hintShape.Normalize();
                 hintShape.Text = RandomStringBuilder.GenerateRandomString();
+
+                using (Bitmap bmp = new Bitmap(1, 1))
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    Font font = new Font("Arial", 16, FontStyle.Bold);
+                    SizeF size = g.MeasureString(hintShape.Text, font);
+                    float textX = ((hintShape.X + hintShape.X + hintShape.Width) / 2) - (size.Width / 2);
+                    float textY = ((hintShape.Y + hintShape.Y + hintShape.Height) / 2) - (size.Height / 2);
+                    hintShape.OrangeDot = new PointF(textX, textY);
+                }
+
                 if (hintShape.Width > 0 && hintShape.Height > 0)
                     m.enter_new_shape(hintShape);
                 m.ChangeToGeneralState();

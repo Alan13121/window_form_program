@@ -12,7 +12,7 @@ using System.Drawing;
 
 namespace hw2
 {
-    internal class Model
+    public class Model
     {
 
         Shapes shapes = new Shapes();

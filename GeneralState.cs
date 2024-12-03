@@ -13,6 +13,7 @@ namespace hw2
         const int CTRL_KEY = 17;
         bool isCtrlKeyDown;
         bool isMouseDown;
+        bool isMovingText=false;
         PointF mouseDownPosition = new PointF();
         public void Initialize(Model m)
         {
@@ -25,24 +26,24 @@ namespace hw2
             isMouseDown = true;
             foreach (Shape shape in Enumerable.Reverse(m.GetShapes()))
             {
-                if (shape.IsPointInShape(point))
+                if (selectedShapes.Count > 0 && shape.IsPointOnOrangeDot(point))
                 {
-                    if (isCtrlKeyDown)
-                    {
-                        selectedShapes.Add(shape);
-                    }
-                    else
-                    {
-                        selectedShapes.Clear();
-                        selectedShapes.Add(shape);
-                    }
+                    isMovingText = true;
                     return;
                 }
+                else if (shape.IsPointInShape(point))
+                {
+
+                        selectedShapes.Clear();
+                        selectedShapes.Add(shape);
+                    
+                    return;
+                }
+
+                
             }
-            if (!isCtrlKeyDown)
-            {
-                selectedShapes.Clear();
-            }
+            selectedShapes.Clear();
+
         }
         public void AddSelectedShape(Shape shape)
         {
@@ -52,12 +53,22 @@ namespace hw2
 
         public void MouseMove(Model m, PointF point)
         {
-            if (mouseDownPosition.X > 0 && mouseDownPosition.Y > 0 && isMouseDown)
+            //Console.WriteLine(isMovingText);
+            if (mouseDownPosition.X > 0 && mouseDownPosition.Y > 0 && isMovingText)
+            {
+                foreach (Shape shape in selectedShapes)
+                {
+                    shape.OrangeDot = new PointF(shape.OrangeDot.X + (point.X - mouseDownPosition.X), shape.OrangeDot.Y + (point.Y - mouseDownPosition.Y));
+                }
+                mouseDownPosition = point;
+            }
+            else if ( isMouseDown)
             {
                 foreach (Shape shape in selectedShapes)
                 {
                     shape.X += point.X - mouseDownPosition.X;
                     shape.Y += point.Y - mouseDownPosition.Y;
+                    shape.OrangeDot= new PointF(shape.OrangeDot.X +(point.X - mouseDownPosition.X), shape.OrangeDot.Y +(point.Y - mouseDownPosition.Y));
                 }
                 mouseDownPosition = point;
             }
@@ -70,6 +81,7 @@ namespace hw2
                 mouseDownPosition.X = -1;
                 mouseDownPosition.Y = -1;
                 isMouseDown = false;
+                isMovingText = false;
             }
         }
 
@@ -79,6 +91,7 @@ namespace hw2
                 shape.DrawShape(g);
             foreach (Shape shape in selectedShapes)
                 shape.DrawBoundingBox(g);
+
         }
 
         public void KeyDown(Model m, int keyValue)
