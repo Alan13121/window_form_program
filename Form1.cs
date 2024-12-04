@@ -22,7 +22,6 @@ namespace hw2
         {
             InitializeComponent();
             Canva.Location = new Point(180, 49);
-            //Canva.BackColor = Color.Red;
             Canva.Width = 568;
             Canva.Height = 513;
             Canva.MouseDown += Canva_MouseDown;

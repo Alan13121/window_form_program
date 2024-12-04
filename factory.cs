@@ -41,18 +41,11 @@ namespace hw2
             shape.Width = Width;
             shape.Height = Height;
 
-            using (Bitmap bmp = new Bitmap(1, 1))
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                Font font = new Font("Arial", 16, FontStyle.Bold);
-                SizeF size = g.MeasureString(text, font);
-                float textX = ((X + X + Width) / 2) - (size.Width / 2);
-                float textY = ((Y + Y + Height) / 2) - (size.Height / 2);
-                shape.OrangeDot = new PointF(textX, textY);
-                //shape.OrangeDot = new PointF(X, Y);
-            }
+            SizeF textSize = shape.GetTextSize();
+            float textX = ((X + X + Width) / 2) - (textSize.Width / 2);
+            float textY = ((Y + Y + Height) / 2) - (textSize.Height / 2);
+            shape.OrangeDot = new PointF(textX, textY);
 
-            //Console.WriteLine(shape.OrangeDot);
             return shape;
         }
 

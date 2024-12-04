@@ -19,11 +19,7 @@ namespace hw2
         public event ModelChangedEventHandler _modelChanged;
         public delegate void ModelChangedEventHandler();
         int ID = 1;
-        int type = -1;
-        float x;
-        float y;
-        float height;
-        float width;
+        
         IState drawingState;
         IState generalState;
         IState currentState;
@@ -107,4 +103,3 @@ namespace hw2
 
 }
 
-//

@@ -13,7 +13,7 @@ namespace hw2
         const int CTRL_KEY = 17;
         bool isCtrlKeyDown;
         bool isMouseDown;
-        bool isMovingText=false;
+        bool isMovingText = false;
         PointF mouseDownPosition = new PointF();
         public void Initialize(Model m)
         {
@@ -34,13 +34,13 @@ namespace hw2
                 else if (shape.IsPointInShape(point))
                 {
 
-                        selectedShapes.Clear();
-                        selectedShapes.Add(shape);
-                    
+                    selectedShapes.Clear();
+                    selectedShapes.Add(shape);
+
                     return;
                 }
 
-                
+
             }
             selectedShapes.Clear();
 
@@ -53,7 +53,6 @@ namespace hw2
 
         public void MouseMove(Model m, PointF point)
         {
-            //Console.WriteLine(isMovingText);
             if (mouseDownPosition.X > 0 && mouseDownPosition.Y > 0 && isMovingText)
             {
                 foreach (Shape shape in selectedShapes)
@@ -62,13 +61,13 @@ namespace hw2
                 }
                 mouseDownPosition = point;
             }
-            else if ( isMouseDown)
+            else if (isMouseDown)
             {
                 foreach (Shape shape in selectedShapes)
                 {
                     shape.X += point.X - mouseDownPosition.X;
                     shape.Y += point.Y - mouseDownPosition.Y;
-                    shape.OrangeDot= new PointF(shape.OrangeDot.X +(point.X - mouseDownPosition.X), shape.OrangeDot.Y +(point.Y - mouseDownPosition.Y));
+                    shape.OrangeDot = new PointF(shape.OrangeDot.X + (point.X - mouseDownPosition.X), shape.OrangeDot.Y + (point.Y - mouseDownPosition.Y));
                 }
                 mouseDownPosition = point;
             }

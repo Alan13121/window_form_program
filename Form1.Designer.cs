@@ -239,6 +239,7 @@
             // 
             // shape_type_comboBox
             // 
+            this.shape_type_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.shape_type_comboBox.ForeColor = System.Drawing.Color.Red;
             this.shape_type_comboBox.FormattingEnabled = true;
             this.shape_type_comboBox.Items.AddRange(new object[] {
@@ -251,7 +252,6 @@
             this.shape_type_comboBox.Name = "shape_type_comboBox";
             this.shape_type_comboBox.Size = new System.Drawing.Size(64, 23);
             this.shape_type_comboBox.TabIndex = 5;
-            this.shape_type_comboBox.Text = "形狀";
             this.shape_type_comboBox.SelectedIndexChanged += new System.EventHandler(this.shape_type_comboBox_SelectedIndexChanged);
             // 
             // shape_text_textBox
@@ -295,7 +295,7 @@
             this.groupBox1.Size = new System.Drawing.Size(408, 672);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = ",";
+            this.groupBox1.Text = "資料顯示";
             // 
             // Height_label
             // 
